@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Estimator Widget</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="loan-widget" aria-labelledby="loan-estimator-title">
+      <div class="loan-widget__header">
+        <p class="loan-widget__eyebrow">Loan Estimator</p>
+        <h1 id="loan-estimator-title">Plan your monthly payments</h1>
+        <p class="loan-widget__subtitle">
+          Adjust the sliders to estimate your monthly installment. This runs
+          entirely in the browser, no backend required.
+        </p>
+      </div>
+
+      <div class="loan-widget__content">
+        <div class="loan-widget__controls">
+          <div class="control">
+            <div class="control__label-row">
+              <label for="loan-amount">Loan amount</label>
+              <span class="control__value" data-display="amount">$15,000</span>
+            </div>
+            <input
+              id="loan-amount"
+              type="range"
+              min="1000"
+              max="100000"
+              step="500"
+              value="15000"
+              aria-describedby="loan-amount-help"
+            />
+            <p id="loan-amount-help" class="control__help">$1,000 to $100,000</p>
+          </div>
+
+          <div class="control">
+            <div class="control__label-row">
+              <label for="loan-term">Loan term</label>
+              <span class="control__value" data-display="term">36 months</span>
+            </div>
+            <input
+              id="loan-term"
+              type="range"
+              min="6"
+              max="60"
+              step="1"
+              value="36"
+              aria-describedby="loan-term-help"
+            />
+            <p id="loan-term-help" class="control__help">6 to 60 months</p>
+          </div>
+
+          <div class="control">
+            <div class="control__label-row">
+              <label for="loan-rate">Interest rate</label>
+              <span class="control__value" data-display="rate">8.5% APR</span>
+            </div>
+            <input
+              id="loan-rate"
+              type="range"
+              min="1"
+              max="25"
+              step="0.1"
+              value="8.5"
+              aria-describedby="loan-rate-help"
+            />
+            <p id="loan-rate-help" class="control__help">1% to 25% APR</p>
+          </div>
+        </div>
+
+        <div class="loan-widget__results" role="status" aria-live="polite">
+          <div class="result-card">
+            <h2>Estimated monthly payment</h2>
+            <p class="result-card__amount" data-display="payment">$470</p>
+            <p class="result-card__detail" data-display="summary">
+              Total repayment $16,920 · Total interest $1,920
+            </p>
+          </div>
+          <div class="result-grid">
+            <div>
+              <span class="result-grid__label">Total repayment</span>
+              <span class="result-grid__value" data-display="total">$16,920</span>
+            </div>
+            <div>
+              <span class="result-grid__label">Total interest</span>
+              <span class="result-grid__value" data-display="interest">$1,920</span>
+            </div>
+            <div>
+              <span class="result-grid__label">APR</span>
+              <span class="result-grid__value" data-display="apr">8.5%</span>
+            </div>
+          </div>
+          <button class="loan-widget__cta" type="button">
+            Request a personalized offer
+          </button>
+          <p class="loan-widget__note">
+            Estimates are informational only. Actual terms may vary.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
