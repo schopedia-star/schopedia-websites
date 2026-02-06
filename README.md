@@ -1,2 +1,11 @@
 # schopedia-websites
-Website projects and templates for Schopedia, including landing pages, client sites, and educational platforms.
+
+Website projects and templates for Schopedia.
+
+## Purpose
+This repository is the central place for:
+- Website templates
+- Active website projects
+- Shared web assets
+
+## Repository Structure
