@@ -9,3 +9,6 @@ This repository is the central place for:
 - Shared web assets
 
 ## Repository Structure
+templates/ → Reusable website templates
+projects/ → Individual website projects
+assets/ → Shared assets (logos, styles, icons)
