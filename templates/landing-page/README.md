@@ -10,3 +10,6 @@ Reusable HTML/CSS landing page template for Schopedia websites and client projec
 
 ## Usage
 Copy this folder and customize the content, styles, and branding as needed.
+
+## Live Preview
+https://schopedia-star.github.io/schopedia-websites/templates/landing-page/
