@@ -16,11 +16,4 @@ palette in `style.css` to match your brand.
 
 ## Testing link
 
-To preview the widget locally, start a simple web server from the
-`templates/loan-estimator` directory and open the link below:
 
-```bash
-python -m http.server 8000
-```
-
-Testing link: [http://localhost:8000/index.html](http://localhost:8000/index.html)
