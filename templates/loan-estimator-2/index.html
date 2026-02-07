@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Estimator Widget</title>
+    <title>Loan Estimator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="loan-widget" aria-labelledby="loan-estimator-title">
+      <div class="loan-widget__header">
+        <p class="loan-widget__eyebrow">Loan Estimator</p>
+        <h1 id="loan-estimator-title">Plan your monthly payments</h1>
+        <p class="loan-widget__subtitle">
+          Adjust the sliders to estimate your monthly installment. This runs
+          entirely in the browser, no backend required.
+        </p>
+    <section class="cc-estimator-wrapper" aria-labelledby="loan-estimator-title">
+      <div class="cc-loan-types">
+        <h2 id="loan-estimator-title">Loan Types Offered</h2>
+        <ul>
+          <li>
+            <strong>Personal Loan</strong>
+            <span>Flexible loans for personal needs</span>
+          </li>
+          <li>
+            <strong>Car Loan</strong>
+            <span>Finance for new or used vehicles</span>
+          </li>
+          <li>
+            <strong>Agri Loan</strong>
+            <span>Support for farming &amp; agriculture</span>
+          </li>
+          <li>
+            <strong>Business Loan</strong>
+            <span>Capital to grow your business</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="loan-widget__content">
+        <div class="loan-widget__controls">
+          <div class="control">
+            <div class="control__label-row">
+              <label for="loan-amount">Loan amount</label>
+              <span class="control__value" data-display="amount">$15,000</span>
+            </div>
+            <input
+              id="loan-amount"
+              type="range"
+              min="1000"
+              max="100000"
+              step="500"
+              value="15000"
+              aria-describedby="loan-amount-help"
+            />
+            <p id="loan-amount-help" class="control__help">$1,000 to $100,000</p>
+          </div>
+      <div class="cc-estimator-card">
+        <h3>Loan Estimator</h3>
+
+          <div class="control">
+            <div class="control__label-row">
+              <label for="loan-term">Loan term</label>
+              <span class="control__value" data-display="term">36 months</span>
+            </div>
+            <input
+              id="loan-term"
+              type="range"
+              min="6"
+              max="60"
+              step="1"
+              value="36"
+              aria-describedby="loan-term-help"
+            />
+            <p id="loan-term-help" class="control__help">6 to 60 months</p>
+          </div>
+        <label for="amount">How much would you like?</label>
+        <input
+          type="number"
+          id="amount"
+          min="100"
+          step="50"
+          value="500"
+          inputmode="decimal"
+        />
+
+        <label for="months">For how many months?</label>
+        <input type="number" id="months" min="1" max="36" value="3" />
+
+          <div class="control">
+            <div class="control__label-row">
+              <label for="loan-rate">Interest rate</label>
+              <span class="control__value" data-display="rate">8.5% APR</span>
+            </div>
+            <input
+              id="loan-rate"
+              type="range"
+              min="1"
+              max="25"
+              step="0.1"
+              value="8.5"
+              aria-describedby="loan-rate-help"
+            />
+            <p id="loan-rate-help" class="control__help">1% to 25% APR</p>
+        <label for="loanType">Type of loan</label>
+        <select id="loanType">
+          <option>Personal Loan</option>
+          <option>Car Loan</option>
+          <option>Agri Loan</option>
+          <option>Business Loan</option>
+        </select>
+
+        <div class="cc-summary" aria-live="polite">
+          <h4>Loan Summary</h4>
+
+          <div>
+            <span>Loan Amount</span>
+            <span id="sumAmount" data-display="amount">K500.00</span>
+          </div>
+        </div>
+          <div>
+            <span>Loan Tenure</span>
+            <span id="sumTenure" data-display="tenure">3 months</span>
+          </div>
+          <div>
+            <span>Loan Type</span>
+            <span id="sumType" data-display="type">Personal Loan</span>
+          </div>
+
+          <hr />
+
+        <div class="loan-widget__results" role="status" aria-live="polite">
+          <div class="result-card">
+            <h2>Estimated monthly payment</h2>
+            <p class="result-card__amount" data-display="payment">$470</p>
+            <p class="result-card__detail" data-display="summary">
+              Total repayment $16,920 · Total interest $1,920
+            </p>
+          <div>
+            <span>Service Fee</span>
+            <span id="fee" data-display="fee">K50.00</span>
+          </div>
+          <div class="result-grid">
+            <div>
+              <span class="result-grid__label">Total repayment</span>
+              <span class="result-grid__value" data-display="total">$16,920</span>
+            </div>
+            <div>
+              <span class="result-grid__label">Total interest</span>
+              <span class="result-grid__value" data-display="interest">$1,920</span>
+            </div>
+            <div>
+              <span class="result-grid__label">APR</span>
+              <span class="result-grid__value" data-display="apr">8.5%</span>
+            </div>
+          <div>
+            <span>Amount You Receive</span>
+            <span id="net" data-display="net">K450.00</span>
+          </div>
+          <div>
+            <span>Monthly Repayment</span>
+            <span id="repayment" data-display="repayment">K191.67</span>
+          </div>
+          <div>
+            <span>Next Payment Date</span>
+            <span id="nextDate" data-display="next-date"></span>
+          </div>
+          <button class="loan-widget__cta" type="button">
+            Request a personalized offer
+          </button>
+          <p class="loan-widget__note">
+            Estimates are informational only. Actual terms may vary.
+          </p>
+        </div>
+
+        <a
+          href="https://city-credit.odoo.com/apply-for-a-loan"
+          class="cc-apply-btn"
+        >
+          Apply now
+        </a>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
